@@ -1,6 +1,7 @@
 package Lesson3.controller;
 
 import Lesson3.model.StudentGroup;
+import Lesson3.model.StudentStream;
 import Lesson3.service.StudentStreamService;
 
 import java.util.List;
@@ -20,7 +21,19 @@ public class StudentSreamController {
         studentStreamService.addStudentGroupToStream(studentGroup);
     }
 
+    public void addStudentStreamToDataBase(StudentStream studentStream) {
+        studentStreamService.addStudentStreamToData(studentStream);
+    }
+
+    public List<StudentStream> sortStudentStream() {
+        return studentStreamService.sortStudentStream();
+    }
+
     public void sortStudentGroupList(){
         studentStreamService.sort();
+    }
+
+    public StudentStream getSS(){
+        return studentStreamService.getStudentStream();
     }
 }

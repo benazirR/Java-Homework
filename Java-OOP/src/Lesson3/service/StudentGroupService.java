@@ -18,8 +18,16 @@ public class StudentGroupService {
         studentGroup.addStudent(student);
     }
 
+    public void addStudentsToGroup(List<Student> students) {
+        studentGroup.addStudents(students);
+    }
+
     public List<Student> sort() {
         Collections.sort(studentGroup.getStudents());
         return studentGroup.getStudents();
-     }
+    }
+
+    public StudentGroup getStudentGroup() {
+        return studentGroup;
+    }
 }

@@ -2,13 +2,14 @@ package Lesson3.model;
 
 import Lesson3.util.StudentStreamIterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class StudentStream implements Iterable<StudentGroup>, Comparable<StudentStream> {
     // Список УчебныхГрупп и реализующий интерфейс Iterable
 
-    private List<StudentGroup> studentGroupList;
+    private List<StudentGroup> studentGroupList = new ArrayList<>();
 
     public void addStudentGroup(StudentGroup studentGroup) {
         studentGroupList.add(studentGroup);
@@ -26,5 +27,12 @@ public class StudentStream implements Iterable<StudentGroup>, Comparable<Student
     @Override
     public int compareTo(StudentStream ss) {
         return this.studentGroupList.size() - ss.studentGroupList.size();
+    }
+
+    @Override
+    public String toString() {
+        return "StudentStream{" +
+                "studentGroupList=" + studentGroupList +
+                '}';
     }
 }
