@@ -2,10 +2,9 @@ package Lesson3.service;
 
 import Lesson3.model.StudentGroup;
 import Lesson3.model.StudentStream;
-import Lesson3.util.StudentStreamComparator;
+import Lesson3.util.StudentGroupComparator;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class StudentStreamService {
@@ -19,8 +18,12 @@ public class StudentStreamService {
         studentStream.addStudentGroup(studentGroup);
     }
 
-    public List<StudentStream> sort() {
-        Collections.sort(studentStream.getStudentGroupList(), new StudentStreamComparator());
+    public List<StudentGroup> sort() {
+        Collections.sort(studentStream.getStudentGroupList(), new StudentGroupComparator());
+        return studentStream.getStudentGroupList();
+    }
+
+    public List<StudentGroup> getStudentGroupList() {
         return studentStream.getStudentGroupList();
     }
 }
